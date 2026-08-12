@@ -55,6 +55,9 @@ ExportedObj/
 # Unity3D generated file on crash reports
 sysinfo.txt
 
+# Local-only source document for the instruction manual (PDF is committed instead)
+Instruction_Manual.docx
+
 # Builds
 *.apk
 *.aab
