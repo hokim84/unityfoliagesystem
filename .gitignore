@@ -47,16 +47,14 @@ ExportedObj/
 *.opendb
 *.VC.db
 
-# Unity3D generated meta files
-*.pidb.meta
-*.pdb.meta
-*.mdb.meta
+# Unity3D meta files (code-showcase repo — asset GUIDs are not published)
+*.meta
 
 # Unity3D generated file on crash reports
 sysinfo.txt
 
 # Local-only source document for the instruction manual (PDF is committed instead)
-Instruction_Manual.docx
+*.docx
 
 # Builds
 *.apk

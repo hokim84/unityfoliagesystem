@@ -7,7 +7,7 @@
 
 ## 📖 시작하기 전에 — 사용 설명서를 먼저 읽어주세요
 
-> ### ➡️ **[📕 Instruction_Manual.pdf 열기](./Instruction_Manual.pdf)**
+> ### ➡️ **[📕 기술_매뉴얼.pdf 열기](./기술_매뉴얼.pdf)**
 >
 > **툴 사용 전 반드시 정독**해야 하는 전체 사용 설명서입니다.
 > Grass Builder의 DensityMap 베이킹 절차, Foliage Day 브러시 단축키, 팔레트 구성 및 데이터 저장 방식 등

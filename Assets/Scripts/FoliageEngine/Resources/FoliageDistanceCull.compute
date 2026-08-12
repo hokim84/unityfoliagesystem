@@ -1,0 +1,37 @@
+#pragma kernel CullDistance
+
+StructuredBuffer<float4x4> _AllMatrices;
+AppendStructuredBuffer<float4x4> _VisibleMatrices;
+RWStructuredBuffer<uint> _ArgsBuffer;
+
+cbuffer CameraData
+{
+    float3 _CameraPos;
+    float3 _CameraForward;
+    float _SqrCullDistance;
+    uint _MatrixCount;
+}
+
+float SqrDistance(float3 a, float3 b)
+{
+    float3 diff = a - b;
+    return dot(diff, diff);
+}
+
+[numthreads(64, 1, 1)]
+void CullDistance(uint id : SV_DispatchThreadID)
+{
+    if (id >= _MatrixCount)
+        return;
+
+    float4x4 m = _AllMatrices[id];
+    float3 pos = m._m03_m13_m23; 
+    bool visible = (SqrDistance(pos, _CameraPos) <= _SqrCullDistance) && (dot(pos - _CameraPos, _CameraForward) > 0);
+   
+    [branch]
+    if (!visible)
+        return;
+    
+    float3 toCamera = pos - _CameraPos;
+    _VisibleMatrices.Append(m);    
+}
